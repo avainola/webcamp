@@ -1,0 +1,54 @@
+
+:root {
+  --main-color: #0099ff;
+}
+
+.container {
+  margin: 10px;
+  text-align: center;
+}
+
+.button {
+  background-color: #ffffff;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  margin: 8px;
+  padding: 8px 32px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
+
+.button:active {
+  position: relative;
+  top: 2px;
+}
+
+@media (max-width: 480px) {
+  .button {
+    width: 90%;
+  }
+}
+
+.primary {
+  composes: button;
+  background-color: var(--main-color);
+  color: #ffffff;
+}
+
+.large {
+  composes: button;
+  padding: 16px 64px;
+  font-size: 1.2rem;
+}
+
+.primaryLarge {
+  composes: primary;
+  /* can't use 'composed: large;', because it will override primary colors */
+  padding: 16px 64px;
+  font-size: 1.2rem;
+}
